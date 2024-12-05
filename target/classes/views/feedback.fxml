@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="intfeed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1010.0" style="-fx-background-color: #EEEFF5; -fx-background-radius: 20;" stylesheets="@design.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FeedbackController">
+   <children>
+      <ImageView fitHeight="74.0" fitWidth="93.0" layoutX="819.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../pics/taskmasterlogo.png" />
+         </image>
+      </ImageView>
+      <Text id="TITLE" layoutX="330.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FEEDBACKS" />
+      <Text id="TITLE3" layoutX="314.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <AnchorPane layoutX="297.0" layoutY="448.0" prefHeight="196.0" prefWidth="687.0" style="-fx-border-color: #fff; -fx-border-width: 1px; -fx-border-radius: 10px;">
+         <children>
+            <Text layoutX="63.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id" />
+            <Text layoutX="45.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating" />
+            <Text layoutX="262.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="77.123046875" />
+            <Button id="buttonAdd" fx:id="addClient" layoutX="449.0" layoutY="145.0" mnemonicParsing="false" onAction="#addButton" prefHeight="25.0" prefWidth="83.0" text="ADD " />
+            <Button id="buttonDelete" layoutX="551.0" layoutY="147.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="25.0" prefWidth="83.0" text="DELETE " />
+            <TextField fx:id="rating" layoutX="96.0" layoutY="66.0" />
+            <TextField fx:id="idfeed" layoutX="95.0" layoutY="33.0" />
+            <TextArea fx:id="descrarea" layoutX="339.0" layoutY="34.0" prefHeight="82.0" prefWidth="330.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="FEEDBACKtable" layoutX="300.0" layoutY="153.0" onMouseClicked="#handleTableClick" prefHeight="285.0" prefWidth="696.0">
+         <columns>
+            <TableColumn fx:id="ID" prefWidth="101.0" text="ID" />
+            <TableColumn fx:id="ratingcol" prefWidth="242.39996337890625" text="Rating" />
+            <TableColumn fx:id="description" prefWidth="351.20001220703125" text="Description" />
+         </columns>
+      </TableView>
+      <VBox id="blocschoix " prefHeight="676.0" prefWidth="273.0" style="-fx-background-color: #ff7060; -fx-background-radius: 0;" stylesheets="@design.css">
+         <children>
+            <ImageView fitHeight="106.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pics/TaskMaster.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="75.0" />
+               </VBox.margin>
+            </ImageView>
+            <AnchorPane prefHeight="474.0" prefWidth="274.0" styleClass="butontext">
+               <children>
+                  <Button fx:id="accessClient" layoutX="30.0" layoutY="35.0" mnemonicParsing="false" onAction="#accessClient" prefHeight="35.0" prefWidth="216.0" style="-fx-background-color: #ff7060; -fx-border-color: #fff; -fx-border-width: 0 0 1 0; -fx-cursor: hand;" styleClass="butontext" text="Clients">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@../../../../../Downloads/design.css" />
+                        <URL value="@design.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button fx:id="project" layoutX="30.0" layoutY="86.0" mnemonicParsing="false" onAction="#project" prefHeight="35.0" prefWidth="216.0" style="-fx-background-color: #ff7060; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 0 0 1 0; -fx-cursor: hand;" styleClass="butontext" text="Projects">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="accessemployee" layoutX="29.0" layoutY="138.0" mnemonicParsing="false" onAction="#accessemployee" prefHeight="35.0" prefWidth="216.0" style="-fx-background-color: #ff7060; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 0 0 1 0; -fx-cursor: hand;" styleClass="butontext" text="Employees">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="feedback" layoutX="29.0" layoutY="243.0" mnemonicParsing="false" onAction="#feedback" prefHeight="35.0" prefWidth="216.0" style="-fx-background-color: #fe5b52; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" styleClass="butontext" text="Feedbacks">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="team" layoutX="29.0" layoutY="190.0" mnemonicParsing="false" onAction="#team" prefHeight="35.0" prefWidth="216.0" style="-fx-background-color: #ff7060; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 0 0 1 0; -fx-cursor: hand;" styleClass="butontext" text="Teams">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="Dashboard" layoutX="30.0" layoutY="-21.0" mnemonicParsing="false" onAction="#Dashboard" prefHeight="35.0" prefWidth="216.0" style="-fx-background-color: #ff7060; -fx-background-radius: 0; -fx-border-width: 0 0 1 0; -fx-border-color: #fff; -fx-cursor: hand;" styleClass="butontext" text="Home">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="70.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="32.0" prefWidth="273.0" style="-fx-background-color: #464580;" styleClass="butontext">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="224.0" onMousePressed="#quit" pickOnBounds="true" preserveRatio="true" fx:id="x">
+                     <image>
+                        <Image url="@../pics/x.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="24.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Disconnect ?" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
